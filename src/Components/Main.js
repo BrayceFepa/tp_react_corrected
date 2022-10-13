@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Categories from "./Categories";
 import ProductCard from "./ProductCard";
 import SearchForm from "./SearchForm";
-import { data } from "../data";
+import products from "../products";
 
-function Main({cartCount, setCartCount}) {
+function Main({addToCart}) {
+  
   return (
     <div>
       <div>
@@ -13,11 +14,12 @@ function Main({cartCount, setCartCount}) {
       </div>
 
       <div className="container">
+        
         <div className="row p-4 mx-auto g-4">
 
-          {data.map((product, id) => {
+          {products.map((product, id) => {
             return (
-              <ProductCard {...product} key={id} cartCount={cartCount} setCartCount={setCartCount} />
+              <ProductCard product={product} key={id} addToCart={addToCart} />
             );
           })}
           

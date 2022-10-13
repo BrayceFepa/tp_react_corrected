@@ -82,3 +82,17 @@
   top: -4px;
   right: -4px;
 }
+
+.img-top{
+  height: 200px;
+  width: 200px;
+}
+
+.iconshop{
+  cursor: pointer;
+}
+.modalcart{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

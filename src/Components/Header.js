@@ -3,11 +3,11 @@ import NavBar from './NavBar'
 import TopBar from './TopBar'
 
 
-function Header({ cartCount }) {
+function Header({length, cart, incrementQuantity, decrementQuantity}) {
   return (
       <div>
           <TopBar />
-          <NavBar counter={cartCount} />
+      <NavBar length={length} cart={cart} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} />
     </div>
   )
 }
