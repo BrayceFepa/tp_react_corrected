@@ -78,7 +78,7 @@ function NavBar({ length, cart, incrementQuantity, decrementQuantity }) {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-component">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
@@ -103,12 +103,18 @@ function NavBar({ length, cart, incrementQuantity, decrementQuantity }) {
                   </div>
 
                   <div className="info-box">
-                    <div className="product-title">
+
+                    <div className="product-title my-2">
                       <span className="title fw-bold">Title: </span>
                       <span className="title">{product.title}</span>
                     </div>
 
-                    <div className="product-quantity d-flex justify-content-between mt-3 align-items-center ">
+                    <div className="product-title my-2">
+                      <span className="title fw-bold">Price: </span>
+                      <span className="title">{product.price} $</span>
+                    </div>
+
+                    <div className="product-quantity d-flex justify-content-between my-2 align-items-center ">
                       <span className="title me-3 fw-bold">Quantity: </span>
 
                       <div className="d-flex justify-content-between align-items-center">
