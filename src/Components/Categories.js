@@ -1,6 +1,9 @@
 import React from 'react'
+import CategoryBtn from './CategoryBtn';
 
-function Categories() {
+function Categories({productsFilter, isSelected}) {
+  const categoriesList = ['All', "women", "men", "baby", "All"]; //we've forgotten baby category
+
   return (
       <div className="main container d-flex justify-content-center align-items-center flex-column my-5">
           {/* Main title */}
@@ -12,16 +15,11 @@ function Categories() {
         </div>
 
         <div className="row w-100 mt-5 d-flex justify-content-between align-items-center mx-auto">
-          <a href='#'className="col-2 bg-danger cursor-pointer py-2 text-center h5 px-3 mr-1  text-decoration-none text-white">All</a>
-          <a href='#' className="col-2 bg-secondary py-2 text-center h5 px-3 mr-1 text-decoration-none text-white">
-            Women's
-          </a>
-          <a href='#' className="col-2 bg-secondary py-2 text-center h5 px-3 mr-1 text-decoration-none text-white">
-            Men's
-          </a>
-          <a href='#' className="col-2 bg-secondary py-2 text-center h5 px-3 mr-1 text-decoration-none text-white">
-            All
-          </a>
+        {
+          categoriesList.map((category, id) => (
+            <CategoryBtn category={category} selected={isSelected === id} onSelect={()=>productsFilter(id, category)} />
+          ))
+          }
         </div>
     </div>
   )
